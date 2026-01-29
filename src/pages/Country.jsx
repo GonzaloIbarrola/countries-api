@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { getCountryByName } from "../services/countriesApi";
+import LoadingIcon from "../assets/loading.svg"
 import BackButton from "../components/BackButton";
 
 export default function Country() {
@@ -39,25 +40,27 @@ export default function Country() {
     fetchBorders();
   }, [country]);
 
-  if (!country) return <p className="p-4">Loading...</p>;
+  if (!country) return <div className="w-screen h-screen flex items-center justify-center">
+    <img className="animate-spin w-3xs h-3xs opacity-30 dark:invert" src={LoadingIcon}/>
+  </div>;
   return (
     <section className="dark:bg-blue-950 pt-10 pb-[55px] lg:h-screen flex flex-col gap-16 lg:gap-20 sm:gap-14 px-7 sm:px-[100px] lg:px-20">
       <BackButton onClick={() => navigate(-1)} />
-      <article className="dark:text-white lg:flex lg:flex-row lg:gap-[120px]">
+      <article className="dark:text-white lg:flex flex flex-col lg:flex-row lg:items-start gap-[48px] lg:gap-[120px]">
         <img
           src={country.flags.svg}
           alt={`${country.name.common} flag`}
-          className="mb-4 lg:mb-0 rounded-[5px] sm:mb-14 lg:w-[560px] 2xl:w-[750px]"
+          className="object-contain rounded-[5px] lg:w-[560px] 2xl:w-[750px]"
         />
-        <section className="flex flex-col items-start gap-8 lg:w-[600px]">
-          <h2 className="text-[24px] sm:text-[32px] font-extrabold leading-[137.5%] mb-4">
+        <section className="flex flex-col items-start gap-4 md:gap-8 lg:w-[600px]">
+          <h2 className="text-[24px] sm:text-[32px] font-extrabold leading-[137.5%]">
             {country.name.common}
           </h2>
-          <div className="md:flex md:justify-between flex flex-col md:flex-row gap-8 lg:w-full">
-            <ul className="*:capitalize **:text-[14px] sm:**:text-[16px] **:leading-8">
+          <div className="md:flex md:justify-between flex flex-col md:flex-row gap-8 lg:w-full lg:flex-col xl:flex-row">
+            <ul className="*:capitalize *:font-light **:text-[14px] sm:**:text-[16px] **:leading-8">
               <li>
                 <strong className="font-semibold">native name:</strong>{" "}
-                {country.altSpellings[1]}
+                {country.name.official}
               </li>
               <li>
                 <strong className="font-semibold">population:</strong>{" "}
@@ -76,7 +79,7 @@ export default function Country() {
                 {country.capital}
               </li>
             </ul>
-            <ul className="**:text-[14px] *:capitalize **:leading-8 sm:**:text-[16px]">
+            <ul className="**:text-[14px] *:capitalize *:font-light **:leading-8 sm:**:text-[16px]">
               <li className="normal-case!">
                 <strong className="font-semibold capitalize">
                   top level domain:
@@ -107,10 +110,10 @@ export default function Country() {
               </li>
             </ul>
           </div>
-          <div className="flex items-center lg:items-start md:gap-4">
+          <div className="flex flex-col lg:flex-row items-start gap-4">
             <div className=" whitespace-nowrap">
               <h3 className="capitalize text-[16px] font-semibold sm:mb-0 mb-4 leading-[158%]">
-                border countries
+                border countries:
               </h3>
             </div>
             <div>
