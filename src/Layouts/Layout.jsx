@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAllCountries } from "../services/countriesApi";
-import Header from "./Header";
+import Header from "../components/Header";
 
 export default function Layout() {
   const [countries, setCountries] = useState([]);

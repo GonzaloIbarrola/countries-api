@@ -1,21 +1,53 @@
-<<<<<<< HEAD
-# countries-api
-FrontendMentor challenge.
-=======
-# React + Vite
+# Countries Explorer 🌍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend web app para explorar información de países del mundo: búsqueda, filtros por región, modo oscuro y detalle de cada país.
 
-Currently, two official plugins are available:
+## 🚀 Demo
+🔗 https://countries-explorer-gonzalo.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
+- Listado de países consumiendo API externa
+- Búsqueda por nombre
+- Filtro por región
+- Vista de detalle por país
+- Navegación con React Router
+- Modo oscuro persistente
+- Diseño responsive
 
-## React Compiler
+## 🛠️ Tech Stack
+- React
+- React Router
+- JavaScript (ES6+)
+- Tailwind CSS
+- REST Countries API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Project Structure
+src/
+├── components/
+│ ├── backButton.jsx
+│ ├── CountryCard.jsx
+│ ├── FilterRegion.jsx
+│ ├── Header.jsx
+│ ├── Layout.jsx
+│ └── SearchInput.jsx
+├── pages/
+│ ├── Home.jsx
+│ └── Country.jsx
+├── services/
+│ └── countriesApi.js
+├── layout/
+│ └── Layout.jsx
+└── main.jsx
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> 8eeb920b87e9de7f542d9755c34b17feaf82ed63
+## ⚙️ How It Works
+- Los datos se obtienen desde **REST Countries API**
+- El filtrado se realiza en el cliente usando `Array.filter`
+- La navegación entre vistas se maneja con **React Router**
+- El modo oscuro se implementa usando `localStorage` y clases `dark` de Tailwind
+
+## 👤 Author
+
+Gonzalo Ibarrola
+Frontend Developer
+🇦🇷 Argentina
