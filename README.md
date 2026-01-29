@@ -24,19 +24,18 @@ Frontend web app para explorar información de países del mundo: búsqueda, fil
 ## 📂 Project Structure
 src/
 ├── components/
-│ ├── backButton.jsx
-│ ├── CountryCard.jsx
-│ ├── FilterRegion.jsx
-│ ├── Header.jsx
-│ ├── Layout.jsx
-│ └── SearchInput.jsx
+│   ├── backButton.jsx
+│   ├── CountryCard.jsx
+│   ├── FilterRegion.jsx
+│   ├── Header.jsx
+│   └── SearchInput.jsx
 ├── pages/
-│ ├── Home.jsx
-│ └── Country.jsx
+│   ├── Home.jsx
+│   └── Country.jsx
 ├── services/
-│ └── countriesApi.js
+│   └── countriesApi.js
 ├── layout/
-│ └── Layout.jsx
+│   └── Layout.jsx
 └── main.jsx
 
 
@@ -47,7 +46,6 @@ src/
 - El modo oscuro se implementa usando `localStorage` y clases `dark` de Tailwind
 
 ## 👤 Author
-
 Gonzalo Ibarrola
 Frontend Developer
 🇦🇷 Argentina
