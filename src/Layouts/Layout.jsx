@@ -25,7 +25,15 @@ export default function Layout() {
     );
   });
 
-  if (loading) return <p className="p-4">Loading...</p>;
+  if (!country)
+    return (
+      <div className="w-screen h-screen flex items-center justify-center">
+        <img
+          className="animate-spin w-3xs h-3xs opacity-30 dark:invert"
+          src={LoadingIcon}
+        />
+      </div>
+    );
 
   const toggleFilter = () => setFilter((prev) => !prev);
   const toggleDarkmode = () => setDark((prev) => !prev);
