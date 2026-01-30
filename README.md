@@ -23,20 +23,20 @@ Frontend web app para explorar información de países del mundo: búsqueda, fil
 
 ## 📂 Project Structure
 src/
-├── components/
-│   ├── backButton.jsx
-│   ├── CountryCard.jsx
-│   ├── FilterRegion.jsx
-│   ├── Header.jsx
-│   └── SearchInput.jsx
-├── pages/
-│   ├── Home.jsx
-│   └── Country.jsx
-├── services/
-│   └── countriesApi.js
-├── layout/
-│   └── Layout.jsx
-└── main.jsx
+-├── components/
+-│   ├── backButton.jsx
+-│   ├── CountryCard.jsx
+-│   ├── FilterRegion.jsx
+-│   ├── Header.jsx
+-│   └── SearchInput.jsx
+-├── pages/
+-│   ├── Home.jsx
+-│   └── Country.jsx
+-├── services/
+-│   └── countriesApi.js
+-├── layout/
+-│   └── Layout.jsx
+-└── main.jsx
 
 
 ## ⚙️ How It Works
