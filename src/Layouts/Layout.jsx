@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getAllCountries } from "../services/countriesApi";
+import LoadingIcon from "../assets/loading.svg"
 import Header from "../components/Header";
 
 export default function Layout() {
@@ -25,7 +26,7 @@ export default function Layout() {
     );
   });
 
-  if (!country)
+  if (loading)
     return (
       <div className="w-screen h-screen flex items-center justify-center">
         <img
