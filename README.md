@@ -3,7 +3,7 @@
 Frontend web app para explorar información de países del mundo: búsqueda, filtros por región, modo oscuro y detalle de cada país.
 
 ## 🚀 Demo
-🔗 https://countries-explorer-gonzalo.vercel.app
+🔗 https://gonzaloibarrola.github.io/countries-api/
 
 ## 📌 Features
 - Listado de países consumiendo API externa
@@ -41,7 +41,7 @@ src/
 
 ## ⚙️ How It Works
 - Los datos se obtienen desde **REST Countries API**
-- El filtrado se realiza en el cliente usando `Array.filter`
+- El filtrado se realiza en el cliente usando `Array.includes`
 - La navegación entre vistas se maneja con **React Router**
 - El modo oscuro se implementa usando `localStorage` y clases `dark` de Tailwind
 
