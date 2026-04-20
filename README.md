@@ -49,3 +49,21 @@ src/
 Gonzalo Ibarrola
 Frontend Developer
 🇦🇷 Argentina
+
+## portfolio-meta
+```json
+{
+  "published": true,
+  "featured": true,
+  "slug": "nombre-del-proyecto",
+  "title": "Nombre del proyecto",
+  "summary": "Resumen corto para mostrar en la card del portfolio.",
+  "seoDescription": "Descripción pensada para SEO en la página interna del proyecto.",
+  "tags": ["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
+  "thumbnail": "/images/projects/nombre-del-proyecto/cover.png",
+  "thumbnailAlt": "Vista principal del proyecto Nombre del proyecto",
+  "demoUrl": "https://demo.com",
+  "repoUrl": "https://github.com/tu-user/nombre-del-proyecto",
+  "priority": 1,
+  "status": "completed"
+}
