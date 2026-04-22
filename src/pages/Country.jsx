@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
-import { getCountryByName } from "../services/countriesApi";
+import {
+  getCountryByName,
+  getCountryNamesByCodes,
+} from "../services/countriesApi";
 import LoadingIcon from "../assets/loading.svg"
 import BackButton from "../components/BackButton";
 
@@ -24,13 +27,8 @@ export default function Country() {
       }
 
       try {
-        const codigos = country.borders.join(",");
-        const response = await fetch(
-          `https://restcountries.com/v3.1/alpha?codes=${codigos}`,
-        );
-        const paises = await response.json();
-
-        setBorders(paises.map((p) => p.name.common));
+        const countries = await getCountryNamesByCodes(country.borders);
+        setBorders(countries);
       } catch (error) {
         console.error("Error al obtener países limítrofes:", error);
         setBorders([]);

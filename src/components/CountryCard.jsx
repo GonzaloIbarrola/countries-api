@@ -20,7 +20,7 @@ export default function CountryCard({ country }) {
             </li>
             <li>
               <strong className="font-semibold">Capital:</strong>{" "}
-              {country.capital[0]}
+              {country.capital?.[0] ?? "No capital"}
             </li>
           </ul>
         </div>

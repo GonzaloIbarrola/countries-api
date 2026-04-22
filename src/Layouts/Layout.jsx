@@ -7,6 +7,7 @@ import Header from "../components/Header";
 export default function Layout() {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [filter, setFilter] = useState(!true);
   const [dark, setDark] = useState(!true);
   const [search, setSearch] = useState("");
@@ -14,6 +15,10 @@ export default function Layout() {
   useEffect(() => {
     getAllCountries()
       .then(setCountries)
+      .catch((error) => {
+        console.error(error);
+        setError("Unable to load countries.");
+      })
       .finally(() => setLoading(false));
   }, []);
 
@@ -26,6 +31,9 @@ export default function Layout() {
     );
   });
 
+  const toggleFilter = () => setFilter((prev) => !prev);
+  const toggleDarkmode = () => setDark((prev) => !prev);
+
   if (loading)
     return (
       <div className="w-screen h-screen flex items-center justify-center">
@@ -36,8 +44,15 @@ export default function Layout() {
       </div>
     );
 
-  const toggleFilter = () => setFilter((prev) => !prev);
-  const toggleDarkmode = () => setDark((prev) => !prev);
+  if (error)
+    return (
+      <div className={`min-h-screen dark:bg-blue-950 ${dark ? "dark" : ""}`}>
+        <Header dark={dark} toggleDarkmode={toggleDarkmode} />
+        <main className="px-4 md:px-10 md:pt-12 pt-6 text-grey-950 dark:text-white">
+          <p>{error}</p>
+        </main>
+      </div>
+    );
 
   return (
     <div className={`dark:bg-blue-950 ${dark ? "dark" : ""}`}>

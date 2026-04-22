@@ -15,7 +15,7 @@ export default function Home() {
         </div>
         <article className="px-13.75 py-8 flex flex-col lg:justify-start md:flex-row md:flex-wrap md:justify-center gap-10 md:gap-[72px]">
           {filteredCountries.map((country) => (
-            <CountryCard key={country.cca3} country={country} />
+            <CountryCard key={country.name.common} country={country} />
           ))}
         </article>
       </section>

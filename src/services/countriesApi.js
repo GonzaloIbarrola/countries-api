@@ -1,15 +1,21 @@
-const BASE_URL = "https://restcountries.com/v3.1";
+import countries from "../data/countriesV3.1.json";
 
-export const getAllCountries = async () => {
-  const res = await fetch(
-    `${BASE_URL}/all?fields=name,flags,cca3,region,population,capital,currency,language,subregion,domain`
-  );
-  return res.json();
-};
+const countriesByCode = new Map(
+  countries.map((country) => [country.cca3, country])
+);
+
+export const getAllCountries = async () => countries;
 
 export const getCountryByName = async (name) => {
-  const res = await fetch(
-    `${BASE_URL}/name/${name}?fullText=true`
+  const normalizedName = name.toLowerCase();
+  return countries.filter(
+    (country) =>
+      country.name.common.toLowerCase() === normalizedName ||
+      country.name.official.toLowerCase() === normalizedName
   );
-  return res.json();
 };
+
+export const getCountryNamesByCodes = async (codes) =>
+  codes
+    .map((code) => countriesByCode.get(code)?.name.common)
+    .filter(Boolean);
