@@ -60,7 +60,7 @@ Frontend Developer
   "summary": "Aplicación para explorar países del mundo con búsqueda, filtros por región, navegación entre vistas y detalle individual por país.",
   "seoDescription": "Countries Explorer es una aplicación desarrollada con React, React Router y Tailwind CSS que consume la REST Countries API para listar países, filtrarlos por región, consultar su detalle y ofrecer una experiencia responsive con modo oscuro persistente.",
   "tags": ["React", "React Router", "Tailwind CSS", "REST Countries API", "Vite"],
-  "thumbnail": "/images/projects/countries-api/cover.png",
+  "thumbnail": "/images/cover.png",
   "thumbnailAlt": "Vista principal del proyecto Countries Explorer",
   "demoUrl": "https://gonzaloibarrola.github.io/countries-api/",
   "repoUrl": "https://github.com/GonzaloIbarrola/countries-api",
